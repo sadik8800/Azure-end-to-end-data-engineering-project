@@ -17,11 +17,14 @@ The Microsoft Azure resources utilized for this project are:
 | 🔹 **Azure Data Factory (ADF)** | Data ingestion from source to destination. |
 | ⚡ **Azure Databricks** | Data transformations using PySpark and Spark-SQL. |
 | 💾 **Azure Data Lake Storage Gen2 (ADLS)** | Storing all the data. |
-| 🛡️ **Unity Catalog** | Data governance, access control, and schema management. |
 | 📊 **Azure Synapse Analytics** | Reporting and querying. |
 | 📈 **Power BI** | Creating dashboards (Established connection between Synapse and Power BI). |
 
 ---
+
+<img width="1536" height="1024" alt="ChatGPT Image Jul 6, 2026, 07_38_33 PM" src="https://github.com/user-attachments/assets/2c5bd568-d1a8-46db-a902-b7c78e21aaf7" />
+
+
 
 ## 🏛️ Medallion Architecture
 
@@ -47,7 +50,7 @@ This project follows the **Medallion Architecture** consisting of **Bronze**, **
 
 ### 🥉 Bronze Layer
 
-- Stored raw data as **Parquet** format from the source systems.
+- Stored raw data as **CSV** format from the source systems.
 - Data is ingested from the Git Repository to Azure Data Lake Storage Gen2 using **Azure Data Factory Dynamic Pipelines**.
 
 ---
@@ -59,7 +62,7 @@ This project follows the **Medallion Architecture** consisting of **Bronze**, **
 - Normalization
 - Business rule implementation
 - Data transformations using **PySpark** and **Spark-SQL**
-- Stored transformed data in **Delta** format under the **Silver** schema.
+- Stored transformed data in **Parquet** format under the **Silver** schema.
 
 ---
 
@@ -129,7 +132,5 @@ Power BI Dashboard
 - Dynamic Data Ingestion using Azure Data Factory
 - Data Transformation using PySpark & Spark-SQL
 - Medallion Architecture (Bronze, Silver & Gold)
-- Star Schema Data Modeling
-- Unity Catalog for Data Governance
 - Azure Synapse Analytics Integration
 - Power BI Reporting & Dashboards
