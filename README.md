@@ -92,7 +92,6 @@ This project helped business leaders to:
 | Data Processing | Azure Databricks |
 | Data Transformation | PySpark, Spark-SQL |
 | Data Format | Parquet, Delta Lake |
-| Data Governance | Unity Catalog |
 | Data Warehouse | Azure Synapse Analytics |
 | Data Visualization | Power BI |
 
