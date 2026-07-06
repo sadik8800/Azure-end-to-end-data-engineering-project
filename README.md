@@ -1,17 +1,136 @@
-# Azure-end-to-end-data-engineering-project
-Project Overview
+# 🚀 Azure End-To-End Data Engineering Project
 
-This project demonstrates the development of a complete end-to-end data engineering solution on Microsoft Azure. It covers the entire data lifecycle—from ingesting raw data and building a modern data warehouse to creating a business-ready dimensional model for reporting and analytics.
+> Welcome to the **Azure End-To-End Data Engineering Project!**
 
-The primary objective was to consolidate data from multiple sources into a centralized platform, perform data cleansing and transformation, apply business logic, and deliver high-quality data for business intelligence and advanced analytics.
+This project demonstrates the development of an end-to-end data pipeline solution, from building a data warehouse from scratch to generating a business-ready data model using Microsoft Azure tools.
 
-Azure Services Used
+The main goal was to bring all data into one system, clean it, apply business logic, and make it available for reporting and analytics.
 
-The following Microsoft Azure services were utilized throughout the project:
+---
 
-Azure Data Factory (ADF): Automated data ingestion using dynamic pipelines to move data from the source repository into Azure Data Lake Storage Gen2.
-Azure Data Lake Storage Gen2 (ADLS Gen2): Centralized storage for raw, transformed, and curated data.
-Azure Databricks: Performed data cleansing, transformation, and enrichment using PySpark and Spark SQL.
-Unity Catalog: Managed data governance, access control, and metadata across the lakehouse.
-Azure Synapse Analytics: Enabled high-performance querying and served as the reporting layer.
-Power BI: Connected to Azure Synapse Analytics to build interactive dashboards and business reports.
+## 🧩 Data Architecture
+
+The Microsoft Azure resources utilized for this project are:
+
+| Azure Service | Purpose |
+|---------------|---------|
+| 🔹 **Azure Data Factory (ADF)** | Data ingestion from source to destination. |
+| ⚡ **Azure Databricks** | Data transformations using PySpark and Spark-SQL. |
+| 💾 **Azure Data Lake Storage Gen2 (ADLS)** | Storing all the data. |
+| 🛡️ **Unity Catalog** | Data governance, access control, and schema management. |
+| 📊 **Azure Synapse Analytics** | Reporting and querying. |
+| 📈 **Power BI** | Creating dashboards (Established connection between Synapse and Power BI). |
+
+---
+
+## 🏛️ Medallion Architecture
+
+This project follows the **Medallion Architecture** consisting of **Bronze**, **Silver**, and **Gold** layers.
+
+```text
+                 Source Data
+                      │
+                      ▼
+        🥉 Bronze Layer (Raw Data)
+                      │
+                      ▼
+      🥈 Silver Layer (Cleaned Data)
+                      │
+                      ▼
+    🥇 Gold Layer (Business Model)
+                      │
+                      ▼
+     📊 Synapse Analytics & Power BI
+```
+
+---
+
+### 🥉 Bronze Layer
+
+- Stored raw data as **Parquet** format from the source systems.
+- Data is ingested from the Git Repository to Azure Data Lake Storage Gen2 using **Azure Data Factory Dynamic Pipelines**.
+
+---
+
+### 🥈 Silver Layer
+
+- Data cleansing
+- Standardization
+- Normalization
+- Business rule implementation
+- Data transformations using **PySpark** and **Spark-SQL**
+- Stored transformed data in **Delta** format under the **Silver** schema.
+
+---
+
+### 🥇 Gold Layer
+
+- Created final **Fact** and **Dimension** tables.
+- Built a **Star Schema** for reporting and analytics.
+- Stored business-ready data under the **Gold** schema for BI and Data Science teams.
+
+---
+
+## ⭐ Business Impact
+
+This project helped business leaders to:
+
+- 📈 Track product performance across different regions.
+- 💰 Monitor pricing trends.
+- 📊 Generate business-ready dashboards.
+- 🤖 Enable analysts and data scientists to build ML models using clean and reliable data.
+
+---
+
+## 🛠️ Technology Stack
+
+| Category | Technologies |
+|----------|--------------|
+| Cloud Platform | Microsoft Azure |
+| Data Ingestion | Azure Data Factory |
+| Data Storage | Azure Data Lake Storage Gen2 |
+| Data Processing | Azure Databricks |
+| Data Transformation | PySpark, Spark-SQL |
+| Data Format | Parquet, Delta Lake |
+| Data Governance | Unity Catalog |
+| Data Warehouse | Azure Synapse Analytics |
+| Data Visualization | Power BI |
+
+---
+
+## 📌 Architecture Flow
+
+```text
+Git Repository
+      │
+      ▼
+Azure Data Factory
+      │
+      ▼
+Azure Data Lake Storage Gen2
+      │
+      ▼
+Azure Databricks
+      │
+      ▼
+Bronze ➜ Silver ➜ Gold
+      │
+      ▼
+Azure Synapse Analytics
+      │
+      ▼
+Power BI Dashboard
+```
+
+---
+
+## ✨ Key Highlights
+
+- End-to-End Azure Data Engineering Project
+- Dynamic Data Ingestion using Azure Data Factory
+- Data Transformation using PySpark & Spark-SQL
+- Medallion Architecture (Bronze, Silver & Gold)
+- Star Schema Data Modeling
+- Unity Catalog for Data Governance
+- Azure Synapse Analytics Integration
+- Power BI Reporting & Dashboards
